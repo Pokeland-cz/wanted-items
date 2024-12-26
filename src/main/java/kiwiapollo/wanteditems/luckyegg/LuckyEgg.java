@@ -34,7 +34,7 @@ public class LuckyEgg extends Item {
             user.getStackInHand(hand).decrement(1);
         }
 
-        user.playSound(SoundEvents.ENTITY_EXPERIENCE_ORB_PICKUP, SoundCategory.PLAYERS, 1F, 1F);
+        user.playSound(SoundEvents.ENTITY_EXPERIENCE_ORB_PICKUP);
         return TypedActionResult.success(user.getStackInHand(hand));
     }
 }

@@ -56,7 +56,7 @@ public class LevelRandomizer extends Item implements PokemonSelectingItem {
             itemStack.decrement(1);
         }
 
-        player.playSound(CobblemonSounds.MEDICINE_PILLS_USE, SoundCategory.PLAYERS, 1F, 1F);
+        player.playSound(CobblemonSounds.MEDICINE_PILLS_USE);
         return TypedActionResult.success(itemStack);
     }
 
