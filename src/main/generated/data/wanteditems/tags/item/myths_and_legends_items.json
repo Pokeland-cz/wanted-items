@@ -1,5 +1,4 @@
 {
-  "replace": false,
   "values": [
     "myths_and_legends:adamant_orb",
     "myths_and_legends:aurora_ticket",
@@ -25,7 +24,6 @@
     "myths_and_legends:rainbow_wing",
     "myths_and_legends:silver_wing",
     "myths_and_legends:violet_book",
-    "myths_and_legends:silver_wing",
     "myths_and_legends:scarlet_book",
     "myths_and_legends:cocoon_of_destruction",
     "myths_and_legends:sapling_of_life",
