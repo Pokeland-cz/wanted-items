@@ -26,7 +26,7 @@ public class DataGenerator implements DataGeneratorEntrypoint {
 
         @Override
         protected void configure(RegistryWrapper.WrapperLookup arg) {
-            Items.MYTHS_AND_LEGENDS_ITEMS.forEach(identifier -> getOrCreateTagBuilder(ModTagRegistry.MYTHS_AND_LEGENDS_ITEMS).add(identifier));
+            Items.ALL_ITEM_IDS.forEach(identifier -> getOrCreateTagBuilder(ModTagRegistry.MYTHS_AND_LEGENDS_ITEMS).add(identifier));
         }
     }
 }
