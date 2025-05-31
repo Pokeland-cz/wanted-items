@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:mythsandlegends/from_original/wellspring_mask"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_wellspring_mask": {
+      "conditions": {
+        "items": [
+          {
+            "items": "mythsandlegends:wellspring_mask"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_wellspring_mask"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:mythsandlegends/from_original/wellspring_mask"
+    ]
+  }
+}

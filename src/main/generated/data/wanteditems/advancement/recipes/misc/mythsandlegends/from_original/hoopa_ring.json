@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_hoopa_ring": {
+      "conditions": {
+        "items": [
+          {
+            "items": "mythsandlegends:hoopa_ring"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:mythsandlegends/from_original/hoopa_ring"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_hoopa_ring"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:mythsandlegends/from_original/hoopa_ring"
+    ]
+  }
+}

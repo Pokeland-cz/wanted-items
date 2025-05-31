@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:mythsandlegends/from_original/zygarde_core"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_zygarde_core": {
+      "conditions": {
+        "items": [
+          {
+            "items": "mythsandlegends:zygarde_core"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_zygarde_core"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:mythsandlegends/from_original/zygarde_core"
+    ]
+  }
+}

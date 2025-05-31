@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "mythsandlegends:cocoon_of_destruction"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "wanteditems:mythsandlegends/cocoon_of_destruction"
+  }
+}

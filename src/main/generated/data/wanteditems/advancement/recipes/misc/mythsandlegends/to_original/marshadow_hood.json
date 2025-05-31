@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_mythsandlegends/marshadow_hood": {
+      "conditions": {
+        "items": [
+          {
+            "items": "wanteditems:mythsandlegends/marshadow_hood"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:mythsandlegends/to_original/marshadow_hood"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_mythsandlegends/marshadow_hood"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:mythsandlegends/to_original/marshadow_hood"
+    ]
+  }
+}

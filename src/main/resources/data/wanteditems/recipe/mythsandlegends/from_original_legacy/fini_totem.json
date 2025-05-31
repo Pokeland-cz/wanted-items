@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "myths_and_legends:fini_totem"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "wanteditems:mythsandlegends/fini_totem"
+  }
+}

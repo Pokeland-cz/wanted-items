@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "wanteditems:mythsandlegends/zygarde_cube"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "mythsandlegends:zygarde_cube"
+  }
+}

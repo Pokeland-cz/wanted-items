@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "wanteditems:mythsandlegends/kubfus_band"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "mythsandlegends:kubfus_band"
+  }
+}

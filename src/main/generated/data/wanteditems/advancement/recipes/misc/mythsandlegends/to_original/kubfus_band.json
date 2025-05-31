@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_mythsandlegends/kubfus_band": {
+      "conditions": {
+        "items": [
+          {
+            "items": "wanteditems:mythsandlegends/kubfus_band"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:mythsandlegends/to_original/kubfus_band"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_mythsandlegends/kubfus_band"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:mythsandlegends/to_original/kubfus_band"
+    ]
+  }
+}

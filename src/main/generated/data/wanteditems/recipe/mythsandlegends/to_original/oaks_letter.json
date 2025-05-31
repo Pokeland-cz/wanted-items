@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "wanteditems:mythsandlegends/oaks_letter"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "mythsandlegends:oaks_letter"
+  }
+}

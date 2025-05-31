@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "wanteditems:mythsandlegends/scarlet_book"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "mythsandlegends:scarlet_book"
+  }
+}

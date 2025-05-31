@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "wanteditems:mythsandlegends/necro_prism"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "mythsandlegends:necro_prism"
+  }
+}

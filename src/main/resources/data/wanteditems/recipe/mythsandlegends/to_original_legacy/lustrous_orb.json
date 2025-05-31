@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "wanteditems:mythsandlegends/lustrous_orb"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "myths_and_legends:lustrous_orb"
+  }
+}

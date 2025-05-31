@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "myths_and_legends:griseous_orb"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "wanteditems:mythsandlegends/griseous_orb"
+  }
+}

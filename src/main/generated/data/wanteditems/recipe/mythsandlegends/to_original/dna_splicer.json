@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "wanteditems:mythsandlegends/dna_splicer"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "mythsandlegends:dna_splicer"
+  }
+}

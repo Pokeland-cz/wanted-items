@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "wanteditems:mythsandlegends/sapling_of_life"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "myths_and_legends:sapling_of_life"
+  }
+}

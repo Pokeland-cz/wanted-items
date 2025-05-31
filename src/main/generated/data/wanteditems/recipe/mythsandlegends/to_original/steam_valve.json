@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "wanteditems:mythsandlegends/steam_valve"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "mythsandlegends:steam_valve"
+  }
+}

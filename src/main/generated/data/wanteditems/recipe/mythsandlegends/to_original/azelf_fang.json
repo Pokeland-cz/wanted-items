@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "wanteditems:mythsandlegends/azelf_fang"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "mythsandlegends:azelf_fang"
+  }
+}

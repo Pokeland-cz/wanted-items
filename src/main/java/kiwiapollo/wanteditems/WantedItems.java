@@ -5,6 +5,7 @@ import kiwiapollo.wanteditems.luckybox.CobblemonLuckyBoxItem;
 import kiwiapollo.wanteditems.luckybox.MythsAndLegendsLuckyBoxItem;
 import kiwiapollo.wanteditems.misc.MiscItem;
 import kiwiapollo.wanteditems.luckyegg.LuckyEggItem;
+import kiwiapollo.wanteditems.mythsandlegends.MythsAndLegendsItem;
 import kiwiapollo.wanteditems.randomizer.RandomizerItem;
 import kiwiapollo.wanteditems.stateditor.StatEditorItem;
 import kiwiapollo.wanteditems.swapper.PropertySwapperItem;
@@ -20,11 +21,14 @@ import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Arrays;
 
 public class WantedItems implements ModInitializer {
 	public static final String MOD_ID = "wanteditems";
+	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
 	public static final Identifier ITEM_GROUP_ID = Identifier.of(WantedItems.MOD_ID, "item_group");
 	public static final RegistryKey<ItemGroup> ITEM_GROUP_REGISTRY_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), ITEM_GROUP_ID);
@@ -43,6 +47,7 @@ public class WantedItems implements ModInitializer {
 		addPropertySwapperItems();
 		addRandomizerItems();
 		addMiscItems();
+		addMythsAndLegendsItems();
 	}
 
 	private void addItemGroup() {
@@ -139,6 +144,12 @@ public class WantedItems implements ModInitializer {
 			Arrays.stream(MiscItem.values()).forEach(item -> {
 				group.add(item.getItem());
 			});
+		});
+	}
+
+	private void addMythsAndLegendsItems() {
+		Arrays.stream(MythsAndLegendsItem.values()).forEach(item -> {
+			Registry.register(Registries.ITEM, item.getIdentifier(), item.getItem());
 		});
 	}
 }

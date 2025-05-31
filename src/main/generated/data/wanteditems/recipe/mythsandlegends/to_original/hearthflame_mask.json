@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "wanteditems:mythsandlegends/hearthflame_mask"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "mythsandlegends:hearthflame_mask"
+  }
+}

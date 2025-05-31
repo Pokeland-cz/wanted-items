@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "wanteditems:mythsandlegends/meloetta_headset"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "mythsandlegends:meloetta_headset"
+  }
+}

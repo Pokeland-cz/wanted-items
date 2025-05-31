@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "wanteditems:mythsandlegends/jade_orb"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "mythsandlegends:jade_orb"
+  }
+}

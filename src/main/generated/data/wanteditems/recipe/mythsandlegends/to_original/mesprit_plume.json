@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "wanteditems:mythsandlegends/mesprit_plume"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "mythsandlegends:mesprit_plume"
+  }
+}

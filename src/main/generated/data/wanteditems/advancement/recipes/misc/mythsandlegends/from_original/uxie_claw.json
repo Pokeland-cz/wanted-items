@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:mythsandlegends/from_original/uxie_claw"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_uxie_claw": {
+      "conditions": {
+        "items": [
+          {
+            "items": "mythsandlegends:uxie_claw"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_uxie_claw"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:mythsandlegends/from_original/uxie_claw"
+    ]
+  }
+}

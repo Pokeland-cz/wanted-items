@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "wanteditems:mythsandlegends/stone_tablet"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "mythsandlegends:stone_tablet"
+  }
+}

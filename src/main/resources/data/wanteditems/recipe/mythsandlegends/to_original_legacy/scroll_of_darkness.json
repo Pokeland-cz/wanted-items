@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "wanteditems:mythsandlegends/scroll_of_darkness"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "myths_and_legends:scroll_of_darkness"
+  }
+}

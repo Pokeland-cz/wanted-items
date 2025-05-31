@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "wanteditems:mythsandlegends/clear_bell"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "mythsandlegends:clear_bell"
+  }
+}

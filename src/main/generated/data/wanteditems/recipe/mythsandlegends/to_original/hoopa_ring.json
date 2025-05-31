@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "wanteditems:mythsandlegends/hoopa_ring"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "mythsandlegends:hoopa_ring"
+  }
+}

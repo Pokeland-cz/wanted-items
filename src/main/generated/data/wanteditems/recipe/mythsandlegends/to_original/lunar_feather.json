@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "wanteditems:mythsandlegends/lunar_feather"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "mythsandlegends:lunar_feather"
+  }
+}

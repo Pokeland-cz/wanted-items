@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:mythsandlegends/from_original/zeraoras_thunderclaw"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_zeraoras_thunderclaw": {
+      "conditions": {
+        "items": [
+          {
+            "items": "mythsandlegends:zeraoras_thunderclaw"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_zeraoras_thunderclaw"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:mythsandlegends/from_original/zeraoras_thunderclaw"
+    ]
+  }
+}

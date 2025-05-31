@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:mythsandlegends/from_original/zarudes_cape"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_zarudes_cape": {
+      "conditions": {
+        "items": [
+          {
+            "items": "mythsandlegends:zarudes_cape"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_zarudes_cape"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:mythsandlegends/from_original/zarudes_cape"
+    ]
+  }
+}

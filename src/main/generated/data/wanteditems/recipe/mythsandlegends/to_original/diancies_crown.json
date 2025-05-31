@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "wanteditems:mythsandlegends/diancies_crown"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "mythsandlegends:diancies_crown"
+  }
+}

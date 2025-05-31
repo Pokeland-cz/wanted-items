@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "wanteditems:mythsandlegends/dr_fujis_diary"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "mythsandlegends:dr_fujis_diary"
+  }
+}

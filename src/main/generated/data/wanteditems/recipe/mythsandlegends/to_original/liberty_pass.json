@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "wanteditems:mythsandlegends/liberty_pass"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "mythsandlegends:liberty_pass"
+  }
+}
