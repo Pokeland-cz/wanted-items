@@ -50,7 +50,7 @@ public class CopperBottleCap extends Item implements PokemonSelectingItem {
     @Override
     public @Nullable TypedActionResult<ItemStack> applyToPokemon(@NotNull ServerPlayerEntity player, @NotNull ItemStack itemStack, @NotNull Pokemon pokemon) {
         if (isZeroEVs(pokemon)) {
-            player.playSound(SoundEvents.ITEM_SHIELD_BLOCK, SoundCategory.PLAYERS, 1F, 1F);
+            player.playSound(SoundEvents.ITEM_SHIELD_BLOCK);
             player.sendMessage(Text.translatable("item.wanteditems.error.has_zero_stats", pokemon.getSpecies().getTranslatedName()).formatted(Formatting.RED));
             return TypedActionResult.pass(itemStack);
         }
@@ -66,7 +66,7 @@ public class CopperBottleCap extends Item implements PokemonSelectingItem {
             itemStack.decrement(1);
         }
 
-        player.playSound(CobblemonSounds.MEDICINE_PILLS_USE, SoundCategory.PLAYERS, 1F, 1F);
+        player.playSound(CobblemonSounds.MEDICINE_PILLS_USE);
         return TypedActionResult.success(itemStack);
     }
 

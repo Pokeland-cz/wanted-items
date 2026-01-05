@@ -3,6 +3,7 @@ package kiwiapollo.wanteditems.stateditor;
 import com.cobblemon.mod.common.CobblemonSounds;
 import com.cobblemon.mod.common.api.battles.model.actor.BattleActor;
 import com.cobblemon.mod.common.api.item.PokemonSelectingItem;
+import com.cobblemon.mod.common.api.pokemon.labels.CobblemonPokemonLabels;
 import com.cobblemon.mod.common.api.pokemon.stats.Stats;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.cobblemon.mod.common.item.battle.BagItem;
@@ -65,8 +66,14 @@ public class BottleCap extends Item implements PokemonSelectingItem {
     @Override
     public @Nullable TypedActionResult<ItemStack> applyToPokemon(@NotNull ServerPlayerEntity player, @NotNull ItemStack itemStack, @NotNull Pokemon pokemon) {
         if (Objects.equals(pokemon.getIvs().get(stats), IVs.MAX_VALUE)) {
-            player.playSound(SoundEvents.ITEM_SHIELD_BLOCK, SoundCategory.PLAYERS, 1F, 1F);
+            player.playSound(SoundEvents.ITEM_SHIELD_BLOCK);
             player.sendMessage(Text.translatable("item.wanteditems.error.has_maximum_stats", pokemon.getSpecies().getTranslatedName()).formatted(Formatting.RED));
+            return TypedActionResult.pass(itemStack);
+        }
+
+        if (!(pokemon.hasLabels(CobblemonPokemonLabels.LEGENDARY) || pokemon.hasLabels(CobblemonPokemonLabels.MYTHICAL) || pokemon.hasLabels(CobblemonPokemonLabels.PARADOX) || pokemon.hasLabels(CobblemonPokemonLabels.ULTRA_BEAST))) {
+            player.playSound(SoundEvents.ITEM_SHIELD_BLOCK);
+            player.sendMessage(Text.translatable("item.wanteditems.error.not_special", pokemon.getSpecies().getTranslatedName()).formatted(Formatting.RED));
             return TypedActionResult.pass(itemStack);
         }
 
@@ -76,7 +83,7 @@ public class BottleCap extends Item implements PokemonSelectingItem {
             itemStack.decrement(1);
         }
 
-        player.playSound(CobblemonSounds.MEDICINE_PILLS_USE, SoundCategory.PLAYERS, 1F, 1F);
+        player.playSound(CobblemonSounds.MEDICINE_PILLS_USE);
         return TypedActionResult.success(itemStack);
     }
 
