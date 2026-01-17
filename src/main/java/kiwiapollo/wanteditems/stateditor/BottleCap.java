@@ -3,6 +3,7 @@ package kiwiapollo.wanteditems.stateditor;
 import com.cobblemon.mod.common.CobblemonSounds;
 import com.cobblemon.mod.common.api.battles.model.actor.BattleActor;
 import com.cobblemon.mod.common.api.item.PokemonSelectingItem;
+import com.cobblemon.mod.common.api.pokemon.egg.EggGroup;
 import com.cobblemon.mod.common.api.pokemon.labels.CobblemonPokemonLabels;
 import com.cobblemon.mod.common.api.pokemon.stats.Stats;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
@@ -71,13 +72,14 @@ public class BottleCap extends Item implements PokemonSelectingItem {
             return TypedActionResult.pass(itemStack);
         }
 
-        if (!(pokemon.hasLabels(CobblemonPokemonLabels.LEGENDARY) || pokemon.hasLabels(CobblemonPokemonLabels.MYTHICAL) || pokemon.hasLabels(CobblemonPokemonLabels.PARADOX) || pokemon.hasLabels(CobblemonPokemonLabels.ULTRA_BEAST))) {
+        if (!(pokemon.getSpecies().getEggGroups().contains(EggGroup.UNDISCOVERED) || pokemon.hasLabels(CobblemonPokemonLabels.LEGENDARY) || pokemon.hasLabels(CobblemonPokemonLabels.MYTHICAL) || pokemon.hasLabels(CobblemonPokemonLabels.PARADOX) || pokemon.hasLabels(CobblemonPokemonLabels.ULTRA_BEAST))) {
             player.playSound(SoundEvents.ITEM_SHIELD_BLOCK);
             player.sendMessage(Text.translatable("item.wanteditems.error.not_special", pokemon.getSpecies().getTranslatedName()).formatted(Formatting.RED));
             return TypedActionResult.pass(itemStack);
         }
 
         pokemon.setIV(stats, IVs.MAX_VALUE);
+        pokemon.getPersistentData().putBoolean("breedable", false);
 
         if (!player.isCreative()) {
             itemStack.decrement(1);
