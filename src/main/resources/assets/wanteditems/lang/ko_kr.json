@@ -33,6 +33,14 @@
     "item.wanteditems.gold_bottle_cap": "금색병뚜껑",
     "item.wanteditems.copper_bottle_cap": "황색병뚜껑",
 
+    "item.wanteditems.bottle_cap.desc": "개체값 최대화: %s",
+    "item.wanteditems.copper_cap.desc": "모든 개체값을 0으로 설정",
+    "item.wanteditems.gold_cap.desc": "모든 개체값을 31로 설정",
+    "item.wanteditems.cobblemon_lucky_box.desc": "랜덤한 코블몬 아이템을 줍니다",
+    "item.wanteditems.pokeball_lucky_box.desc": "랜덤한 몬스터볼을 줍니다",
+    "item.wanteditems.expcandy_lucky_box.desc": "랜덤한 경험사탕을 줍니다",
+    "item.wanteditems.berry_lucky_box.desc": "랜덤한 나무열매를 줍니다",
+
     "item.wanteditems.ditto_residue": "메타몽 잔여물",
     "item.wanteditems.move_activator": "기술 활성기",
 

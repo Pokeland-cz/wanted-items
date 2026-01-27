@@ -33,6 +33,14 @@
     "item.wanteditems.gold_bottle_cap": "Capsule d'Or",
     "item.wanteditems.copper_bottle_cap": "Capsule de Bronze",
 
+    "item.wanteditems.bottle_cap.desc": "Maximise l'IV : %s",
+    "item.wanteditems.copper_cap.desc": "Met tous les IV à 0",
+    "item.wanteditems.gold_cap.desc": "Met tous les IV à 31",
+    "item.wanteditems.cobblemon_lucky_box.desc": "Donne un objet Cobblemon aléatoire",
+    "item.wanteditems.pokeball_lucky_box.desc": "Donne une Poké Ball aléatoire",
+    "item.wanteditems.expcandy_lucky_box.desc": "Donne un Bonbon Exp. aléatoire",
+    "item.wanteditems.berry_lucky_box.desc": "Donne une Baie aléatoire",
+
     "item.wanteditems.ditto_residue": "Résidu de Ditto",
     "item.wanteditems.move_activator": "Déclencheur de Capacité",
 

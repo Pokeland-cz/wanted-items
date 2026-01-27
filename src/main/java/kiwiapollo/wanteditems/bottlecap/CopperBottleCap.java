@@ -6,12 +6,13 @@ import com.cobblemon.mod.common.api.item.PokemonSelectingItem;
 import com.cobblemon.mod.common.api.pokemon.stats.Stats;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.cobblemon.mod.common.item.battle.BagItem;
+import com.cobblemon.mod.common.pokemon.IVs;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
@@ -21,11 +22,19 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.List;
 import java.util.Objects;
 
 public class CopperBottleCap extends Item implements PokemonSelectingItem {
     public CopperBottleCap() {
         super(new Item.Settings());
+    }
+
+    @Override
+    public void appendTooltip(ItemStack stack, Item.TooltipContext context, List<Text> tooltip, TooltipType type) {
+        if (stack.getItem() == BottleCapItem.COPPER_BOTTLE_CAP) {
+            tooltip.add(Text.translatable("item.wanteditems.copper_cap.desc").formatted(Formatting.GRAY));
+        }
     }
 
     @Override
@@ -57,12 +66,12 @@ public class CopperBottleCap extends Item implements PokemonSelectingItem {
             return TypedActionResult.pass(itemStack);
         }
 
-        pokemon.setIV(Stats.ATTACK, 0);
-        pokemon.setIV(Stats.DEFENCE, 0);
-        pokemon.setIV(Stats.SPECIAL_ATTACK, 0);
-        pokemon.setIV(Stats.SPECIAL_DEFENCE, 0);
-        pokemon.setIV(Stats.HP, 0);
-        pokemon.setIV(Stats.SPEED, 0);
+        pokemon.getIvs().setHyperTrainedIV(Stats.ATTACK, 0);
+        pokemon.getIvs().setHyperTrainedIV(Stats.DEFENCE, 0);
+        pokemon.getIvs().setHyperTrainedIV(Stats.SPECIAL_ATTACK, 0);
+        pokemon.getIvs().setHyperTrainedIV(Stats.SPECIAL_DEFENCE, 0);
+        pokemon.getIvs().setHyperTrainedIV(Stats.HP, 0);
+        pokemon.getIvs().setHyperTrainedIV(Stats.SPEED, 0);
 
         if (!player.isCreative()) {
             itemStack.decrement(1);

@@ -11,8 +11,8 @@ import com.cobblemon.mod.common.pokemon.Pokemon;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
@@ -22,6 +22,7 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.List;
 import java.util.Objects;
 
 public class BottleCap extends Item implements PokemonSelectingItem {
@@ -33,8 +34,24 @@ public class BottleCap extends Item implements PokemonSelectingItem {
 
     public BottleCap(Stats stats) {
         super(new Item.Settings());
-
         this.stats = stats;
+    }
+
+    @Override
+    public void appendTooltip(ItemStack stack, Item.TooltipContext context, List<Text> tooltip, TooltipType type) {
+        if (this.stats != null) {
+            String statName = formatStatName(this.stats.name());
+            tooltip.add(Text.translatable("item.wanteditems.bottle_cap.desc", statName).formatted(Formatting.GRAY));
+        }
+    }
+
+    private String formatStatName(String name) {
+        String[] words = name.toLowerCase().split("_");
+        StringBuilder result = new StringBuilder();
+        for (String word : words) {
+            result.append(Character.toUpperCase(word.charAt(0))).append(word.substring(1)).append(" ");
+        }
+        return result.toString().trim();
     }
 
     @Override
@@ -70,7 +87,7 @@ public class BottleCap extends Item implements PokemonSelectingItem {
             return TypedActionResult.pass(itemStack);
         }
 
-        pokemon.setIV(stats, IVs.MAX_VALUE);
+        pokemon.getIvs().setHyperTrainedIV(stats, IVs.MAX_VALUE);
 
         if (!player.isCreative()) {
             itemStack.decrement(1);

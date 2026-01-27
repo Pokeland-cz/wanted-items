@@ -33,6 +33,15 @@
     "item.wanteditems.gold_bottle_cap": "Gold Bottle Cap",
     "item.wanteditems.copper_bottle_cap": "Copper Bottle Cap",
 
+    "item.wanteditems.bottle_cap.desc": "Maxes hypertrained IV: %s",
+    "item.wanteditems.copper_cap.desc": "Sets all hypertrained IVs to 0",
+    "item.wanteditems.gold_cap.desc": "Sets all hypertrained IVs to 31",
+    "item.wanteditems.cobblemon_lucky_box.desc": "Gives random Cobblemon item",
+    "item.wanteditems.pokeball_lucky_box.desc": "Gives random Pokeball",
+    "item.wanteditems.expcandy_lucky_box.desc": "Gives random Exp Candy",
+    "item.wanteditems.berry_lucky_box.desc": "Gives random Berry",
+    "item.wanteditems.iv_randomizer.desc": "Sets all hypertrained IVs randomly",
+
     "item.wanteditems.ditto_residue": "Ditto Residue",
     "item.wanteditems.move_activator": "Move Activator",
 
