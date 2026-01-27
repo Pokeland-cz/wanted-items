@@ -8,20 +8,33 @@ import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.cobblemon.mod.common.item.battle.BagItem;
 import com.cobblemon.mod.common.pokemon.IVs;
 import com.cobblemon.mod.common.pokemon.Pokemon;
+import kiwiapollo.wanteditems.bottlecap.BottleCapItem;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
+import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.List;
+
 public class IVRandomizer extends Item implements PokemonSelectingItem {
     public IVRandomizer() {
         super(new Item.Settings());
+    }
+
+    @Override
+    public void appendTooltip(ItemStack stack, Item.TooltipContext context, List<Text> tooltip, TooltipType type) {
+        if (stack.getItem() == RandomizerItem.IV_RANDOMIZER) {
+            tooltip.add(Text.translatable("item.wanteditems.iv_randomizer.desc").formatted(Formatting.GRAY));
+        }
     }
 
     @Override
@@ -48,12 +61,12 @@ public class IVRandomizer extends Item implements PokemonSelectingItem {
     @Override
     public @Nullable TypedActionResult<ItemStack> applyToPokemon(@NotNull ServerPlayerEntity player, @NotNull ItemStack itemStack, @NotNull Pokemon pokemon) {
         IVs ivs = IVs.Companion.createRandomIVs(0);
-        pokemon.setIV(Stats.ATTACK, ivs.getOrDefault(Stats.ATTACK));
-        pokemon.setIV(Stats.DEFENCE, ivs.getOrDefault(Stats.DEFENCE));
-        pokemon.setIV(Stats.SPECIAL_ATTACK, ivs.getOrDefault(Stats.SPECIAL_ATTACK));
-        pokemon.setIV(Stats.SPECIAL_DEFENCE, ivs.getOrDefault(Stats.SPECIAL_DEFENCE));
-        pokemon.setIV(Stats.HP, ivs.getOrDefault(Stats.HP));
-        pokemon.setIV(Stats.SPEED, ivs.getOrDefault(Stats.SPEED));
+        pokemon.getIvs().setHyperTrainedIV(Stats.ATTACK, ivs.getOrDefault(Stats.ATTACK));
+        pokemon.getIvs().setHyperTrainedIV(Stats.DEFENCE, ivs.getOrDefault(Stats.DEFENCE));
+        pokemon.getIvs().setHyperTrainedIV(Stats.SPECIAL_ATTACK, ivs.getOrDefault(Stats.SPECIAL_ATTACK));
+        pokemon.getIvs().setHyperTrainedIV(Stats.SPECIAL_DEFENCE, ivs.getOrDefault(Stats.SPECIAL_DEFENCE));
+        pokemon.getIvs().setHyperTrainedIV(Stats.HP, ivs.getOrDefault(Stats.HP));
+        pokemon.getIvs().setHyperTrainedIV(Stats.SPEED, ivs.getOrDefault(Stats.SPEED));
 
         if (!player.isCreative()) {
             itemStack.decrement(1);

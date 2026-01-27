@@ -87,7 +87,7 @@ public class BottleCap extends Item implements PokemonSelectingItem {
             return TypedActionResult.pass(itemStack);
         }
 
-        pokemon.setIV(stats, IVs.MAX_VALUE);
+        pokemon.getIvs().setHyperTrainedIV(stats, IVs.MAX_VALUE);
 
         if (!player.isCreative()) {
             itemStack.decrement(1);

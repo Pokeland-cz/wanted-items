@@ -67,12 +67,12 @@ public class GoldBottleCap extends Item implements PokemonSelectingItem {
             return TypedActionResult.pass(itemStack);
         }
 
-        pokemon.setIV(Stats.ATTACK, IVs.MAX_VALUE);
-        pokemon.setIV(Stats.DEFENCE, IVs.MAX_VALUE);
-        pokemon.setIV(Stats.SPECIAL_ATTACK, IVs.MAX_VALUE);
-        pokemon.setIV(Stats.SPECIAL_DEFENCE, IVs.MAX_VALUE);
-        pokemon.setIV(Stats.HP, IVs.MAX_VALUE);
-        pokemon.setIV(Stats.SPEED, IVs.MAX_VALUE);
+        pokemon.getIvs().setHyperTrainedIV(Stats.ATTACK, IVs.MAX_VALUE);
+        pokemon.getIvs().setHyperTrainedIV(Stats.DEFENCE, IVs.MAX_VALUE);
+        pokemon.getIvs().setHyperTrainedIV(Stats.SPECIAL_ATTACK, IVs.MAX_VALUE);
+        pokemon.getIvs().setHyperTrainedIV(Stats.SPECIAL_DEFENCE, IVs.MAX_VALUE);
+        pokemon.getIvs().setHyperTrainedIV(Stats.HP, IVs.MAX_VALUE);
+        pokemon.getIvs().setHyperTrainedIV(Stats.SPEED, IVs.MAX_VALUE);
 
         if (!player.isCreative()) {
             itemStack.decrement(1);

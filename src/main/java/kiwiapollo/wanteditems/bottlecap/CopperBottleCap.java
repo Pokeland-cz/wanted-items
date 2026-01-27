@@ -6,6 +6,7 @@ import com.cobblemon.mod.common.api.item.PokemonSelectingItem;
 import com.cobblemon.mod.common.api.pokemon.stats.Stats;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.cobblemon.mod.common.item.battle.BagItem;
+import com.cobblemon.mod.common.pokemon.IVs;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -65,12 +66,12 @@ public class CopperBottleCap extends Item implements PokemonSelectingItem {
             return TypedActionResult.pass(itemStack);
         }
 
-        pokemon.setIV(Stats.ATTACK, 0);
-        pokemon.setIV(Stats.DEFENCE, 0);
-        pokemon.setIV(Stats.SPECIAL_ATTACK, 0);
-        pokemon.setIV(Stats.SPECIAL_DEFENCE, 0);
-        pokemon.setIV(Stats.HP, 0);
-        pokemon.setIV(Stats.SPEED, 0);
+        pokemon.getIvs().setHyperTrainedIV(Stats.ATTACK, 0);
+        pokemon.getIvs().setHyperTrainedIV(Stats.DEFENCE, 0);
+        pokemon.getIvs().setHyperTrainedIV(Stats.SPECIAL_ATTACK, 0);
+        pokemon.getIvs().setHyperTrainedIV(Stats.SPECIAL_DEFENCE, 0);
+        pokemon.getIvs().setHyperTrainedIV(Stats.HP, 0);
+        pokemon.getIvs().setHyperTrainedIV(Stats.SPEED, 0);
 
         if (!player.isCreative()) {
             itemStack.decrement(1);
