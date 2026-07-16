@@ -34,7 +34,7 @@
     "item.wanteditems.copper_bottle_cap": "Copper Bottle Cap",
 
     "item.wanteditems.bottle_cap.desc": "Maxes hypertrained IV: %s",
-    "item.wanteditems.copper_cap.desc": "Sets all hypertrained IVs to 0",
+    "item.wanteditems.copper_cap.desc": "Removes all hypertrained IVs",
     "item.wanteditems.gold_cap.desc": "Sets all hypertrained IVs to 31",
     "item.wanteditems.cobblemon_lucky_box.desc": "Gives random Cobblemon item",
     "item.wanteditems.pokeball_lucky_box.desc": "Gives random Pokeball",

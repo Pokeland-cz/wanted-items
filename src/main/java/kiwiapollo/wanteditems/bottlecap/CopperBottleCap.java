@@ -3,6 +3,7 @@ package kiwiapollo.wanteditems.bottlecap;
 import com.cobblemon.mod.common.CobblemonSounds;
 import com.cobblemon.mod.common.api.battles.model.actor.BattleActor;
 import com.cobblemon.mod.common.api.item.PokemonSelectingItem;
+import com.cobblemon.mod.common.api.pokemon.stats.Stat;
 import com.cobblemon.mod.common.api.pokemon.stats.Stats;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.cobblemon.mod.common.item.battle.BagItem;
@@ -66,12 +67,16 @@ public class CopperBottleCap extends Item implements PokemonSelectingItem {
             return TypedActionResult.pass(itemStack);
         }
 
-        pokemon.getIvs().setHyperTrainedIV(Stats.ATTACK, 0);
-        pokemon.getIvs().setHyperTrainedIV(Stats.DEFENCE, 0);
-        pokemon.getIvs().setHyperTrainedIV(Stats.SPECIAL_ATTACK, 0);
-        pokemon.getIvs().setHyperTrainedIV(Stats.SPECIAL_DEFENCE, 0);
-        pokemon.getIvs().setHyperTrainedIV(Stats.HP, 0);
-        pokemon.getIvs().setHyperTrainedIV(Stats.SPEED, 0);
+        IVs ivs = pokemon.getIvs();
+
+        for (Stat stat : Stats.Companion.getPERMANENT()) {
+            Integer naturalIV = ivs.get(stat);
+
+            // Only set the hypertrained IV if naturalIV is not null
+            if (naturalIV != null) {
+                ivs.setHyperTrainedIV(stat, naturalIV);
+            }
+        }
 
         if (!player.isCreative()) {
             itemStack.decrement(1);
