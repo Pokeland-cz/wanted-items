@@ -61,11 +61,11 @@ public class GoldBottleCap extends Item implements PokemonSelectingItem {
 
     @Override
     public @Nullable TypedActionResult<ItemStack> applyToPokemon(@NotNull ServerPlayerEntity player, @NotNull ItemStack itemStack, @NotNull Pokemon pokemon) {
-        if (isPerfectIVs(pokemon)) {
+        /* if (isPerfectIVs(pokemon)) {
             player.playSound(SoundEvents.ITEM_SHIELD_BLOCK);
             player.sendMessage(Text.translatable("item.wanteditems.error.has_maximum_stats", pokemon.getSpecies().getTranslatedName()).formatted(Formatting.RED));
             return TypedActionResult.pass(itemStack);
-        }
+        } */
 
         pokemon.getIvs().setHyperTrainedIV(Stats.ATTACK, IVs.MAX_VALUE);
         pokemon.getIvs().setHyperTrainedIV(Stats.DEFENCE, IVs.MAX_VALUE);

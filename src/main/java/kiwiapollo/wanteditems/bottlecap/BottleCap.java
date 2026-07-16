@@ -81,11 +81,11 @@ public class BottleCap extends Item implements PokemonSelectingItem {
 
     @Override
     public @Nullable TypedActionResult<ItemStack> applyToPokemon(@NotNull ServerPlayerEntity player, @NotNull ItemStack itemStack, @NotNull Pokemon pokemon) {
-        if (isMaximumIV(pokemon, stats)) {
+        /* if (isMaximumIV(pokemon, stats)) {
             player.playSound(SoundEvents.ITEM_SHIELD_BLOCK);
             player.sendMessage(Text.translatable("item.wanteditems.error.has_maximum_stats", pokemon.getSpecies().getTranslatedName()).formatted(Formatting.RED));
             return TypedActionResult.pass(itemStack);
-        }
+        } */
 
         pokemon.getIvs().setHyperTrainedIV(stats, IVs.MAX_VALUE);
 
