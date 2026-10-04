@@ -8,13 +8,11 @@ import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.cobblemon.mod.common.item.battle.BagItem;
 import com.cobblemon.mod.common.pokemon.IVs;
 import com.cobblemon.mod.common.pokemon.Pokemon;
-import kiwiapollo.wanteditems.bottlecap.BottleCapItem;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.sound.SoundCategory;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
@@ -57,7 +55,8 @@ public class IVRandomizer extends Item implements PokemonSelectingItem {
 
     @Override
     public @Nullable TypedActionResult<ItemStack> applyToPokemon(@NotNull ServerPlayerEntity player, @NotNull ItemStack itemStack, @NotNull Pokemon pokemon) {
-        IVs ivs = IVs.Companion.createRandomIVs(0);
+        int guaranteedPerfect = isSpecialPokemon(pokemon) ? 3 : 0;
+        IVs ivs = IVs.Companion.createRandomIVs(guaranteedPerfect);
         pokemon.getIvs().setHyperTrainedIV(Stats.ATTACK, ivs.getOrDefault(Stats.ATTACK));
         pokemon.getIvs().setHyperTrainedIV(Stats.DEFENCE, ivs.getOrDefault(Stats.DEFENCE));
         pokemon.getIvs().setHyperTrainedIV(Stats.SPECIAL_ATTACK, ivs.getOrDefault(Stats.SPECIAL_ATTACK));
@@ -71,6 +70,13 @@ public class IVRandomizer extends Item implements PokemonSelectingItem {
 
         player.playSound(CobblemonSounds.MEDICINE_PILLS_USE);
         return TypedActionResult.success(itemStack);
+    }
+
+    private boolean isSpecialPokemon(Pokemon pokemon) {
+        List<String> specialLabels = List.of("legendary", "mythical", "paradox", "ultra_beast", "ultra-beast");
+        return specialLabels.stream().anyMatch(label -> 
+            pokemon.getForm().getLabels().contains(label) || pokemon.getSpecies().getLabels().contains(label)
+        );
     }
 
 
