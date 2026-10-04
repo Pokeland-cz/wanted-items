@@ -37,7 +37,7 @@ public class GenderSwapper extends Item implements PokemonSelectingItem {
             return TypedActionResult.pass(itemStack);
         }
 
-        return use((ServerPlayerEntity) player, itemStack);
+        return interactGeneral((ServerPlayerEntity) player, itemStack);
     }
 
     @Override
@@ -45,10 +45,7 @@ public class GenderSwapper extends Item implements PokemonSelectingItem {
         return null;
     }
 
-    @Override
-    public @NotNull TypedActionResult<ItemStack> use(@NotNull ServerPlayerEntity player, @NotNull ItemStack itemStack) {
-        return PokemonSelectingItem.DefaultImpls.use(this, player, itemStack);
-    }
+
 
     @Override
     public @Nullable TypedActionResult<ItemStack> applyToPokemon(@NotNull ServerPlayerEntity player, @NotNull ItemStack itemStack, @NotNull Pokemon pokemon) {
